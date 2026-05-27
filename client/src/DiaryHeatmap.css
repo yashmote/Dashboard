@@ -1,0 +1,47 @@
+/* client/src/DiaryHeatmap.css */
+
+/* Re-use container styles, but specific to this component */
+.diary-theme {
+  max-width: 900px;
+  /* Remove margin here so it fits in the grid we'll make */
+  width: 100%;
+  background-color: #1e1e1e; /* Match cards */
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid #333;
+}
+
+.diary-theme h3 {
+  margin-top: 0;
+  color: #aaa;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+/* Base text color */
+.diary-theme .react-calendar-heatmap text {
+  font-size: 10px;
+  fill: #666; 
+}
+
+/* Empty Squares (Dark Grey) */
+.diary-theme .react-calendar-heatmap .color-empty {
+  fill: #262626; 
+}
+
+/* Filled Squares (Blue!) */
+.diary-theme .react-calendar-heatmap .color-filled {
+  fill: #2196F3; /* Bright Material Blue */
+  stroke: #1e1e1e; /* Slight gap effect */
+  stroke-width: 1px;
+}
+
+/* Hover Effect */
+.diary-theme .react-calendar-heatmap .color-filled:hover {
+  fill: #64b5f6; /* Lighter blue on hover */
+  cursor: pointer;
+}

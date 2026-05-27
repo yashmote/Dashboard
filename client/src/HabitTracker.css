@@ -1,0 +1,246 @@
+/* client/src/HabitTracker.css */
+
+.tracker-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #fff;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.checklist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.checklist-header h2 {
+  font-size: 2rem;
+  margin: 0;
+  background: linear-gradient(90deg, #fff, #aaa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.back-link {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  background-color: #1e1e1e;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+.back-link:hover { background-color: #333; color: #fff; }
+
+/* Carousel Layout */
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-grow: 1; /* Fills vertical space */
+}
+
+.cards-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  perspective: 1000px;
+}
+
+/* Common Card Styles */
+.day-card {
+  background-color: #1e1e1e; /* Match your Diary card color */
+  border-radius: 16px;
+  padding: 20px;
+  width: 260px;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid #333;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Center Card (Active) */
+.active-card {
+  transform: scale(1.1);
+  z-index: 10;
+  border-color: #00C853; /* Green border for focus */
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+  background-color: #222;
+}
+
+/* Side Cards (Inactive) */
+.side-card {
+  transform: scale(0.9) translateZ(-50px);
+  opacity: 0.5;
+  filter: blur(0.5px);
+  background-color: #161616;
+}
+
+.side-card:hover {
+  opacity: 0.8;
+  transform: scale(0.95);
+}
+
+/* Card Internals */
+.card-header {
+  text-align: center;
+  border-bottom: 1px solid #333;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.day-name {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.day-date {
+  font-size: 0.85rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card-habits {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+/* Habit Rows inside cards */
+.mini-habit-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  transition: all 0.2s;
+  border: 1px solid #333;
+  position: relative;
+}
+
+.mini-habit-row:hover {
+  background-color: #333;
+  border-color: #555;
+}
+
+.mini-habit-row.done {
+  background-color: #0e2a14; /* Dark green bg */
+  border-color: #004d20;
+}
+
+.mini-checkbox {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #555;
+  border-radius: 50%; /* Circle checkbox */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.mini-habit-row.done .mini-checkbox {
+  background-color: #00C853;
+  border-color: #00C853;
+  box-shadow: 0 0 8px rgba(0, 200, 83, 0.4);
+}
+
+.mini-name {
+  font-size: 0.95rem;
+  color: #ddd;
+  flex-grow: 1;
+}
+
+.mini-habit-row.done .mini-name {
+  color: #777;
+  text-decoration: line-through;
+}
+
+/* Delete Button (Small x) */
+.mini-delete-btn {
+  background: none;
+  border: none;
+  color: #555;
+  cursor: pointer;
+  padding: 4px;
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.mini-habit-row:hover .mini-delete-btn {
+  opacity: 1;
+}
+.mini-delete-btn:hover { color: #ff5252; }
+
+/* Navigation Buttons */
+.nav-btn {
+  background: #1e1e1e;
+  border: 1px solid #333;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.nav-btn:hover {
+  background-color: #00C853;
+  border-color: #00C853;
+}
+
+/* Add Form */
+.centered-form {
+  max-width: 400px;
+  margin: 30px auto 0;
+  display: flex;
+  gap: 10px;
+}
+
+.centered-form input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #333;
+  padding: 10px;
+  color: white;
+  outline: none;
+}
+.centered-form input:focus { border-bottom-color: #00C853; }
+
+.centered-form button {
+  background-color: #00C853;
+  border: none;
+  color: white;
+  padding: 0 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.empty-msg {
+  text-align: center;
+  color: #555;
+  margin-top: 20px;
+  font-style: italic;
+}

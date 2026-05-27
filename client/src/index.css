@@ -1,0 +1,24 @@
+/* client/src/index.css */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  
+  color-scheme: dark; /* Helps browser UI match your dark theme */
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424; /* Matches your background */
+}
+
+/* IMPORTANT: This ensures the app takes full width/height */
+body, html, #root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: block; /* Overrides Vite's default 'flex' */
+}
+
+/* Reset box sizing for better layout control */
+*, *::before, *::after {
+  box-sizing: border-box;
+}

@@ -1,0 +1,149 @@
+/* client/src/Home.css */
+
+.dashboard-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: #fff;
+}
+
+/* Header */
+.dashboard-header {
+  margin-bottom: 40px;
+  text-align: left; /* Aligns with the grid */
+}
+
+.dashboard-header h1 {
+  font-size: 2.5rem;
+  margin: 0 0 10px 0;
+  background: linear-gradient(90deg, #fff, #bbb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: #888;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Common Card Style */
+.dashboard-card {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Heatmap Section */
+.heatmap-section {
+  /* No special styles needed, inherits card */
+}
+
+.card-top {
+  border-bottom: 1px solid #333;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.card-top h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.heatmap-wrapper {
+  overflow-x: auto; /* Handles small screens */
+}
+
+/* Action Grid */
+.action-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns */
+  gap: 20px;
+}
+
+/* Action Cards */
+.action-card {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 20px;
+  padding: 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Effects */
+.action-card:hover {
+  transform: translateY(-5px);
+  border-color: #555;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+.habit-card:hover { border-color: #00C853; }
+.diary-card:hover { border-color: #2196F3; }
+
+/* Icons */
+.icon-box {
+  width: 60px;
+  height: 60px;
+  background-color: #252525;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  transition: transform 0.2s;
+}
+
+.action-card:hover .icon-box {
+  transform: scale(1.1);
+  background-color: #333;
+}
+
+/* Text Info */
+.card-info {
+  flex: 1;
+}
+
+.card-info h2 {
+  margin: 0 0 5px 0;
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.card-info p {
+  margin: 0;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* Arrow */
+.arrow-icon {
+  font-size: 1.5rem;
+  color: #444;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.action-card:hover .arrow-icon {
+  color: #fff;
+  transform: translateX(5px);
+}
+
+/* Responsive adjustment for mobile */
+@media (max-width: 600px) {
+  .action-grid {
+    grid-template-columns: 1fr; /* Stack vertically on phone */
+  }
+}
+
+.finance-card:hover { border-color: #FFD700; } /* Gold glow */

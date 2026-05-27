@@ -1,0 +1,294 @@
+/* client/src/Diary.css */
+
+/* Main Container - Centered on screen */
+.diary-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- HEADER SECTION --- */
+.journal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 20px;
+}
+
+.date-display {
+  text-align: center;
+}
+
+.sub-label {
+  display: block;
+  font-size: 0.85rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.journal-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Links & Buttons in Header */
+.back-link, .history-link {
+  text-decoration: none;
+  background: #1e1e1e;
+  border: 1px solid #333;
+  color: #ccc;
+  padding: 8px 16px;
+  border-radius: 30px; /* Pill shape */
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.back-link:hover, .history-link:hover {
+  background: #333;
+  color: white;
+  border-color: #555;
+}
+
+/* "Write for Today" Button */
+.back-today-btn {
+  align-self: center; /* Center it in the flex column */
+  background: transparent;
+  border: 1px solid #00C853;
+  color: #00C853;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: all 0.2s;
+}
+
+.back-today-btn:hover {
+  background: rgba(0, 200, 83, 0.1);
+}
+
+/* --- PAPER SHEET (The Main Input Area) --- */
+.paper-sheet {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Spacing between Title, Mood, Text, Button */
+}
+
+/* 1. TITLE INPUT */
+.diary-title-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #333;
+  color: #fff;
+  font-size: 2rem; /* Big Title */
+  font-weight: 700;
+  padding: 10px 0;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.diary-title-input:focus {
+  border-bottom-color: #00C853;
+}
+
+.diary-title-input::placeholder {
+  color: #444;
+  font-weight: 600;
+}
+
+/* 2. MOOD ROW */
+.mood-row {
+  display: flex;
+  gap: 15px;
+}
+
+.mood-btn {
+  background: #1e1e1e;
+  border: 2px solid transparent;
+  font-size: 1.8rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mood-btn:hover {
+  transform: scale(1.1);
+  background: #252525;
+}
+
+.mood-btn.selected {
+  background: rgba(0, 200, 83, 0.2);
+  border-color: #00C853;
+  transform: scale(1.1);
+}
+
+/* 3. TEXT AREA */
+.diary-textarea {
+  width: 100%;
+  min-height: 400px;
+  background: #0a0a0a; /* Slightly darker inner bg */
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 20px;
+  color: #ddd;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  resize: vertical;
+  outline: none;
+  font-family: inherit;
+}
+
+.diary-textarea:focus {
+  border-color: #555;
+}
+
+/* 4. SAVE BUTTON */
+.save-row {
+  display: flex;
+  justify-content: flex-end; /* Align right */
+}
+
+.save-btn {
+  background: #00C853;
+  color: #000;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.save-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 200, 83, 0.3);
+}
+
+/* --- HISTORY PAGE STYLES --- */
+
+/* Reuse header styles, but specific tweaks */
+.history-container {
+  max-width: 1000px; /* History page can be wider */
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: white;
+}
+
+.history-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
+.history-header h1 {
+  flex-grow: 1; /* Pushes button to right */
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.export-btn {
+  background: #222;
+  border: 1px solid #444;
+  color: #ccc;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.export-btn:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+/* HISTORY GRID */
+.history-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.history-card {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 16px;
+  padding: 25px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+}
+
+.history-card:hover {
+  transform: translateY(-5px);
+  border-color: #444;
+  background: #161616;
+}
+
+.card-top-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.card-date {
+  font-size: 0.85rem;
+  color: #888;
+  font-weight: 600;
+}
+
+.card-mood {
+  font-size: 1.2rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+}
+
+.card-preview {
+  color: #aaa;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  flex-grow: 1; /* Pushes footer down */
+}
+
+.card-footer {
+  margin-top: 15px;
+  text-align: right;
+}
+
+.read-more {
+  color: #00C853;
+  font-size: 0.85rem;
+  font-weight: bold;
+}

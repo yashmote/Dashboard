@@ -1,0 +1,224 @@
+/* client/src/HabitChecklist.css */
+
+.habit-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* client/src/HabitChecklist.css */
+
+/* ... .habit-container style ... */
+
+/* --- HEADER FIX --- */
+.habit-header {
+  position: relative;       /* Allows absolute positioning inside */
+  display: flex;
+  justify-content: center;  /* Forces the Title (H1) to the center */
+  align-items: center;
+  margin-bottom: 40px;
+  height: 50px;             /* Define height to keep layout stable */
+}
+
+.nav-btn {
+  position: absolute;       /* Takes button out of flow */
+  left: 0;                  /* Pins it to the left edge */
+  
+  /* Keep your existing button styles */
+  background: #1e1e1e;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Ensure H1 is clean */
+.habit-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* ... rest of your CSS ... */
+
+/* CAROUSEL LAYOUT */
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-grow: 1; /* Pushes content to fill space */
+}
+
+.arrow-btn {
+  background: #111;
+  border: 1px solid #333;
+  color: #666;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.arrow-btn:hover {
+  background: #333;
+  color: #fff;
+  border-color: #fff;
+}
+
+.cards-row {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+/* CARDS */
+.day-card {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 16px;
+  padding: 25px;
+  width: 240px;
+  height: 350px; /* Fixed height for consistency */
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  opacity: 0.4;
+  transform: scale(0.95);
+}
+
+.day-card.center-card {
+  opacity: 1;
+  transform: scale(1.05);
+  border-color: #00C853;
+  background: #1a1a1a;
+  box-shadow: 0 0 30px rgba(0, 200, 83, 0.1);
+  z-index: 10;
+}
+
+.card-date-header {
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 15px;
+}
+
+.day-name { font-size: 1.2rem; font-weight: bold; display: block; margin-bottom: 4px; }
+.day-date { font-size: 0.85rem; color: #666; text-transform: uppercase; letter-spacing: 1px; }
+
+/* HABIT LIST */
+.habit-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.habit-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: #222;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.habit-item:hover { background: #2a2a2a; }
+
+.habit-left { display: flex; align-items: center; gap: 12px; }
+
+.checkbox-circle {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #555;
+  border-radius: 50%;
+  display: flex; /* Center the checkmark */
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.habit-item.done .checkbox-circle {
+  background: #00C853;
+  border-color: #00C853;
+  color: black; /* Checkmark color */
+}
+
+/* Make the checkmark visible only when done */
+.checkbox-circle::after {
+  content: '✓';
+  font-size: 14px;
+  font-weight: bold;
+  display: none;
+}
+.habit-item.done .checkbox-circle::after { display: block; }
+
+
+.habit-name { font-size: 0.95rem; color: #ccc; }
+.habit-item.done .habit-name { color: #666; text-decoration: line-through; }
+
+/* Delete Button */
+.mini-del-btn {
+  background: transparent;
+  border: none;
+  color: #444;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 5px;
+}
+.mini-del-btn:hover { color: #FF5252; }
+
+/* ADD BAR (Fixed) */
+.add-habit-bar {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.add-habit-bar input {
+  background: #111;
+  border: 1px solid #333;
+  padding: 12px 20px;
+  border-radius: 12px;
+  color: #fff;
+  width: 300px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.add-habit-bar input:focus { border-color: #00C853; }
+
+.add-habit-bar button {
+  background: #00C853;
+  color: #000;
+  border: none;
+  padding: 0 30px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.add-habit-bar button:hover { transform: scale(1.05); }
+
+.empty-msg {
+  text-align: center;
+  color: #444;
+  font-style: italic;
+  margin-top: 20px;
+}

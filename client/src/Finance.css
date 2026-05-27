@@ -1,0 +1,438 @@
+/* client/src/Finance.css */
+
+.finance-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  color: white;
+}
+
+.finance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* client/src/Finance.css */
+
+/* ... keep .finance-container and .finance-header ... */
+
+/* --- UPDATED BALANCE CARD --- */
+.balance-card {
+  background: linear-gradient(135deg, #1e1e1e, #252525);
+  border: 1px solid #333;
+  padding: 40px;
+  border-radius: 24px;
+  text-align: center;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.balance-card:hover {
+  border-color: #00C853;
+  transform: translateY(-2px);
+}
+
+/* Background Glow Effect */
+.balance-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,200,83,0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.balance-card h3 {
+  margin: 0 0 15px 0;
+  color: #888;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+/* --- DISPLAY MODE --- */
+.balance-display {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 16px;
+  transition: background 0.2s;
+}
+
+.balance-display:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.currency-symbol {
+  font-size: 2rem;
+  color: #555;
+  vertical-align: super;
+  margin-right: 8px;
+  font-weight: normal;
+}
+
+.balance-amount {
+  font-size: 4.5rem; /* Massive Text */
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -2px;
+  text-shadow: 0 0 20px rgba(0, 200, 83, 0.2); /* Green Glow */
+}
+
+/* --- EDIT MODE (The Redesign) --- */
+.edit-balance-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* The Big Input Field */
+.edit-balance-box input {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #00C853; /* Green Text */
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #333;
+  width: 280px;
+  text-align: center;
+  padding: 5px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.edit-balance-box input:focus {
+  border-color: #00C853;
+}
+
+/* Button Container */
+.edit-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* Sleek Buttons */
+.save-btn, .cancel-btn {
+  padding: 10px 24px;
+  border-radius: 30px; /* Pill Shape */
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.1s, opacity 0.2s;
+}
+
+.save-btn {
+  background: #00C853;
+  color: #000;
+  box-shadow: 0 4px 12px rgba(0, 200, 83, 0.3);
+}
+
+.save-btn:hover {
+  background: #00e676;
+  transform: scale(1.05);
+}
+
+.cancel-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ... rest of your CSS ... */
+
+/* GRID LAYOUT */
+.finance-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 700px) {
+  .finance-grid { grid-template-columns: 1fr; }
+}
+
+/* CARDS */
+.expense-form-card, .chart-card {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  padding: 25px;
+  border-radius: 16px;
+}
+
+/* FORM */
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  color: #888;
+  margin-bottom: 5px;
+  font-size: 0.85rem;
+}
+
+.input-group input, .input-group select {
+  width: 100%;
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  padding: 10px;
+  color: white;
+  border-radius: 8px;
+  outline: none;
+}
+
+.input-group input:focus { border-color: #00C853; }
+
+.pay-btn {
+  width: 100%;
+  background-color: #FF5252; /* Expense Red */
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.pay-btn:hover { background-color: #ff1744; }
+
+/* TRANSACTIONS */
+.transactions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.transaction-item {
+  background-color: #1e1e1e;
+  padding: 15px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #333;
+}
+
+.trans-left { display: flex; flex-direction: column; gap: 2px; }
+
+.trans-cat { font-weight: bold; color: #fff; font-size: 1rem; }
+.trans-desc { font-size: 0.85rem; color: #888; }
+.trans-date { font-size: 0.75rem; color: #555; }
+
+.trans-amount {
+  color: #FF5252;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-right: 15px;
+}
+
+.del-btn {
+  background: none;
+  border: none;
+  color: #444;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.del-btn:hover { color: #fff; }
+
+.no-data { text-align: center; color: #555; font-style: italic; }
+
+/* Add to client/src/Finance.css */
+
+.finance-header {
+  display: flex;
+  justify-content: space-between; /* Pushes Selector to the right */
+  align-items: center;
+}
+
+/* client/src/Finance.css */
+
+/* ... existing styles ... */
+
+/* --- CUSTOM DROPDOWN STYLING --- */
+.month-selector {
+  position: relative;
+  display: inline-block;
+}
+
+/* The Select Element itself */
+.month-selector select {
+  appearance: none;          /* 1. Remove default OS arrow */
+  -webkit-appearance: none;  /* Safari support */
+  -moz-appearance: none;     /* Firefox support */
+  
+  background-color: #111;    /* Darker than card */
+  border: 1px solid #333;
+  color: #fff;
+  
+  /* Pill Shape & Spacing */
+  padding: 12px 45px 12px 25px; /* Extra padding on right for the arrow */
+  font-size: 0.95rem;
+  border-radius: 50px;       /* Full Pill Shape */
+  
+  cursor: pointer;
+  outline: none;
+  font-weight: 600;
+  font-family: inherit;      /* Use app font */
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Hover State: Subtle Green Glow */
+.month-selector select:hover {
+  border-color: #00C853;
+  background-color: #1a1a1a;
+  box-shadow: 0 4px 20px rgba(0, 200, 83, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Focus State: Active Green Border */
+.month-selector select:focus {
+  border-color: #00C853;
+}
+
+/* Custom Arrow (The Magic Trick) */
+/* We create a fake arrow and place it on top of the select box */
+.month-selector::after {
+  content: '▼';               /* Unicode Arrow */
+  font-size: 0.6rem;
+  color: #00C853;            /* Green Arrow */
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;      /* Clicks pass through to the select */
+}
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.monthly-total {
+  font-size: 0.9rem;
+  color: #888;
+  font-weight: bold;
+}
+
+.no-data-box {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-style: italic;
+}
+
+/* client/src/Finance.css */
+/* Add these new styles */
+
+.stats-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-box {
+  flex: 1;
+  background: #1e1e1e;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #333;
+}
+.stat-box span { display: block; color: #888; font-size: 0.8rem; margin-bottom: 5px; }
+.stat-box h3 { margin: 0; font-size: 1.5rem; }
+.stat-box.income h3 { color: #00C853; }
+.stat-box.expense h3 { color: #FF5252; }
+
+/* TOGGLE BUTTONS */
+.type-toggle {
+  display: flex;
+  background: #111;
+  padding: 4px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.type-toggle button {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #666;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.2s;
+}
+.type-toggle button.active.expense { background: #FF5252; color: white; }
+.type-toggle button.active.income { background: #00C853; color: black; }
+
+/* Button Colors */
+.pay-btn.income { background-color: #00C853; color: black; }
+.pay-btn.expense { background-color: #FF5252; color: white; }
+
+/* List Colors */
+.trans-amount.income { color: #00C853; }
+.trans-amount.expense { color: #FF5252; }
+
+/* client/src/Finance.css */
+
+/* ... existing styles ... */
+
+/* --- HEADER FIX --- */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Space between button and title */
+}
+
+.back-link {
+  text-decoration: none;
+  background: #1e1e1e;
+  border: 1px solid #333;
+  color: #888;
+  padding: 8px 16px;
+  border-radius: 30px; /* Pill shape */
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.back-link:hover {
+  border-color: #fff;
+  color: #fff;
+  transform: translateX(-2px); /* Subtle slide left effect */
+}
+
+/* Ensure title doesn't break layout */
+.finance-header h1 {
+  margin: 0;
+  line-height: 1;
+}

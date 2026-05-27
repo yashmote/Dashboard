@@ -1,0 +1,29 @@
+/* client/src/Heatmap.css */
+.heatmap-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 20px;
+  background-color: #1a1a1a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: #e0e0e0;
+  margin: 0 auto; /* Remove the top margin so it fits better on Home */
+  width: 100%;
+}
+
+/* Base style for the SVG */
+.react-calendar-heatmap text {
+  font-size: 10px;
+  fill: #888; /* Text color for Mon, Wed, Fri labels */
+}
+
+/* The squares */
+.react-calendar-heatmap .color-empty {
+  fill: #2d2d2d; /* Dark grey for days with 0 habits */
+}
+
+/* Different shades of green based on count */
+.react-calendar-heatmap .color-scale-1 { fill: #0e4429; } /* Dim green */
+.react-calendar-heatmap .color-scale-2 { fill: #006d32; }
+.react-calendar-heatmap .color-scale-3 { fill: #26a641; }
+.react-calendar-heatmap .color-scale-4 { fill: #39d353; } /* Bright neon green */
